@@ -146,7 +146,7 @@ export function ImageCarousel({ images, autoPlayInterval = 5000 }: ImageCarousel
           >
             <CarouselSlide img={img} isActive={index === currentIndex} />
             {img.title && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <div className="absolute left-0 top-0 bg-gradient-to-b from-black/70 to-transparent p-4">
                 <p className="text-sm font-medium text-white md:text-base">{img.title}</p>
               </div>
             )}
