@@ -1,7 +1,7 @@
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { galleryImages } from "@/data/gallery";
 
-const PHONE = "954-376-0410";
+const PHONE = "954-701-3543";
 const EMAIL = "renetdieujuste@gmail.com";
 
 export default function Home() {
