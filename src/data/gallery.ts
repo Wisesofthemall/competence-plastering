@@ -11,6 +11,11 @@ export const galleryImages: CarouselImage[] = [
   { src: "/gallery/3654469973688396740.JPG", alt: "Plastering project", title: "Project Gallery" },
   { src: "/gallery/3916040539287495219.JPG", alt: "Plastering project", title: "Project Gallery" },
   { src: "/gallery/4167928594750567462.JPG", alt: "Plastering project", title: "Project Gallery" },
+  { src: "/gallery/5357785908377352352.JPG", alt: "Plastering project", title: "Project Gallery" },
+  { src: "/gallery/5888605367363471105.JPG", alt: "Plastering project", title: "Project Gallery" },
+  { src: "/gallery/5909118591903714684.JPG", alt: "Plastering project", title: "Project Gallery" },
   { src: "/gallery/6016622430093755601.JPG", alt: "Plastering project", title: "Project Gallery" },
   { src: "/gallery/616521224618407992.JPG", alt: "Plastering project", title: "Project Gallery" },
+  { src: "/gallery/8709369014412488857.JPG", alt: "Plastering project", title: "Project Gallery" },
+  { src: "/gallery/9042096028579107964.JPG", alt: "Plastering project", title: "Project Gallery" },
 ];
