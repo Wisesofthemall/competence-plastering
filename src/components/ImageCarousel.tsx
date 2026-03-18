@@ -1,12 +1,107 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 
 export interface CarouselImage {
   src: string;
   alt: string;
   title?: string;
+}
+
+function isHeic(src: string): boolean {
+  return /\.heic$/i.test(src);
+}
+
+function CarouselSlide({ img, isActive }: { img: CarouselImage; isActive: boolean }) {
+  const [heicUrl, setHeicUrl] = useState<string | null>(null);
+  const [heicError, setHeicError] = useState(false);
+  const [heicLoading, setHeicLoading] = useState(false);
+  const objectUrlRef = useRef<string | null>(null);
+
+  // Only convert HEIC when this slide is active so we don't convert 20+ images at once
+  useEffect(() => {
+    if (!isHeic(img.src) || !isActive) return;
+
+    let cancelled = false;
+    setHeicUrl(null);
+    setHeicError(false);
+    setHeicLoading(true);
+
+    void (async () => {
+      try {
+        const { default: heic2any } = await import('heic2any');
+        if (cancelled) return;
+        const res = await fetch(img.src);
+        const blob = await res.blob();
+        if (cancelled) return;
+        const result = await heic2any({
+          blob,
+          toType: 'image/jpeg',
+          quality: 0.8,
+        });
+        if (cancelled) return;
+        const outBlob = Array.isArray(result) ? result[0] : result;
+        if (!outBlob || !(outBlob instanceof Blob)) {
+          setHeicError(true);
+          return;
+        }
+        const url = URL.createObjectURL(outBlob);
+        objectUrlRef.current = url;
+        setHeicUrl(url);
+      } catch {
+        if (!cancelled) setHeicError(true);
+      } finally {
+        if (!cancelled) setHeicLoading(false);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      if (objectUrlRef.current) {
+        URL.revokeObjectURL(objectUrlRef.current);
+        objectUrlRef.current = null;
+      }
+    };
+  }, [img.src, isActive]);
+
+  if (isHeic(img.src)) {
+    if (heicError) {
+      return (
+        <div className="flex h-full w-full items-center justify-center bg-stone-200 text-stone-500">
+          Could not load image
+        </div>
+      );
+    }
+    if (!heicUrl) {
+      return (
+        <div className="flex h-full w-full items-center justify-center bg-stone-200 text-stone-400">
+          {isActive && heicLoading ? "Loading…" : ""}
+        </div>
+      );
+    }
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={heicUrl}
+        alt={img.alt}
+        className="h-full w-full object-cover"
+      />
+    );
+  }
+
+  return (
+    <div className="relative h-full w-full">
+      <Image
+        src={img.src}
+        alt={img.alt}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 80vw"
+        priority={isActive}
+      />
+    </div>
+  );
 }
 
 interface ImageCarouselProps {
@@ -49,14 +144,7 @@ export function ImageCarousel({ images, autoPlayInterval = 5000 }: ImageCarousel
               index === currentIndex ? 'z-10 opacity-100' : 'z-0 opacity-0'
             }`}
           >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 80vw"
-              priority={index === 0}
-            />
+            <CarouselSlide img={img} isActive={index === currentIndex} />
             {img.title && (
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                 <p className="text-sm font-medium text-white md:text-base">{img.title}</p>

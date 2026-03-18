@@ -1,5 +1,8 @@
 import { ImageCarousel } from "@/components/ImageCarousel";
-import { galleryImages } from "@/data/gallery";
+import {
+  commercialGalleryImages,
+  residentialGalleryImages,
+} from "@/data/gallery";
 
 const PHONE = "954-701-3543";
 const EMAIL = "renetdieujuste@gmail.com";
@@ -80,17 +83,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Work - Carousel */}
+      {/* Commercial - Carousel */}
       <section
         id="work"
         className="border-b border-stone-200 bg-white px-4 py-16 sm:px-6 sm:py-20"
       >
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-            Our Work
+            Commercial
           </h2>
           <div className="mt-8">
-            <ImageCarousel images={galleryImages} autoPlayInterval={5500} />
+            <ImageCarousel
+              images={commercialGalleryImages}
+              autoPlayInterval={5500}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Residential - Carousel */}
+      <section
+        id="residential"
+        className="border-b border-stone-200 bg-white px-4 py-16 sm:px-6 sm:py-20"
+      >
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
+            Residential
+          </h2>
+          <div className="mt-8">
+            <ImageCarousel
+              images={residentialGalleryImages}
+              autoPlayInterval={5500}
+            />
           </div>
         </div>
       </section>

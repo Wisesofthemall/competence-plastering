@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run convert-heic && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "convert-heic": "node scripts/convert-heic-to-jpg.cjs"
   },
   "dependencies": {
+    "heic2any": "^0.0.4",
     "next": "16.1.7",
     "react": "19.2.3",
     "react-dom": "19.2.3"
@@ -20,6 +22,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.7",
+    "heic-convert": "^2.1.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
