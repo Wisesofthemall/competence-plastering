@@ -35,12 +35,13 @@ export const commercialGalleryImages: CarouselImage[] = [
 ];
 
 export const residentialGalleryImages: CarouselImage[] = [
-  galleryEntry("5909118591903714684.JPG"),
-  galleryEntry("8709369014412488857.JPG"),
   galleryEntry("IMG_0511.jpg"),
   galleryEntry("IMG_0512.jpg"),
   galleryEntry("IMG_0515.jpg"),
   galleryEntry("IMG_0517.jpg"),
+  galleryEntry("5909118591903714684.JPG"),
+  galleryEntry("8709369014412488857.JPG"),
+
   galleryEntry("IMG_1681.jpg"),
   galleryEntry("IMG_1684.jpg"),
   galleryEntry("IMG_1685.jpg"),
