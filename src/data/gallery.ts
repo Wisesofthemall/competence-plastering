@@ -14,7 +14,6 @@ const galleryEntry = (src: string): CarouselImage => ({
 export const commercialGalleryImages: CarouselImage[] = [
   galleryEntry("214779003456765065.JPG"),
   galleryEntry("3654469973688396740.JPG"),
-  galleryEntry("3916040539287495219.JPG"),
   galleryEntry("4167928594750567462.JPG"),
   galleryEntry("5357785908377352352.JPG"),
   galleryEntry("5888605367363471105.JPG"),
@@ -37,7 +36,6 @@ export const commercialGalleryImages: CarouselImage[] = [
 
 export const residentialGalleryImages: CarouselImage[] = [
   galleryEntry("5909118591903714684.JPG"),
-  galleryEntry("8709369014412488857.JPG"),
   galleryEntry("8709369014412488857.JPG"),
   galleryEntry("IMG_0511.jpg"),
   galleryEntry("IMG_0512.jpg"),
