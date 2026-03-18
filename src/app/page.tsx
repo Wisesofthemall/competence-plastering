@@ -34,15 +34,26 @@ export default function Home() {
             Professional Plastering & Stucco
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-stone-600 sm:text-xl">
-            Quality exterior and interior finishes for residential and commercial projects. Trusted craftsmanship and lasting results.
+            Quality exterior and interior finishes for residential and
+            commercial projects. Trusted craftsmanship and lasting results.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
               href={`tel:${PHONE.replace(/\D/g, "")}`}
               className="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-3 font-semibold text-white shadow-md transition hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
             >
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
               </svg>
               {PHONE}
             </a>
@@ -50,8 +61,18 @@ export default function Home() {
               href={`mailto:${EMAIL}`}
               className="inline-flex items-center gap-2 rounded-lg border-2 border-stone-300 bg-white px-5 py-3 font-semibold text-stone-700 transition hover:border-amber-500 hover:bg-stone-50 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
             >
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
               </svg>
               Email Us
             </a>
@@ -60,7 +81,10 @@ export default function Home() {
       </section>
 
       {/* Our Work - Carousel */}
-      <section id="work" className="border-b border-stone-200 bg-white px-4 py-16 sm:px-6 sm:py-20">
+      <section
+        id="work"
+        className="border-b border-stone-200 bg-white px-4 py-16 sm:px-6 sm:py-20"
+      >
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
             Our Work
@@ -72,7 +96,10 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="border-b border-stone-200 bg-stone-50/50 px-4 py-16 sm:px-6 sm:py-20">
+      <section
+        id="services"
+        className="border-b border-stone-200 bg-stone-50/50 px-4 py-16 sm:px-6 sm:py-20"
+      >
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
             Services
@@ -82,18 +109,38 @@ export default function Home() {
           </p>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Exterior Stucco", desc: "Durable, weather-resistant stucco for homes and commercial buildings." },
-              { title: "Interior Plastering", desc: "Smooth and decorative interior plaster walls and ceilings." },
-              { title: "Restoration & Repair", desc: "Repair and restoration of existing stucco and plaster surfaces." },
-              { title: "Custom Textures", desc: "Custom textures and finishes to match your design vision." },
-              { title: "Waterproofing", desc: "Coatings and systems to protect and extend the life of your finish." },
-              { title: "Commercial & Residential", desc: "From single-family homes to large commercial facades." },
+              {
+                title: "Exterior Stucco",
+                desc: "Durable, weather-resistant stucco for residential and commercial buildings.",
+              },
+              {
+                title: "Interior Plastering",
+                desc: "Smooth and decorative interior plaster walls and ceilings.",
+              },
+              {
+                title: "Restoration & Repair",
+                desc: "Repair and restoration of existing stucco and plaster surfaces.",
+              },
+              {
+                title: "Custom Textures",
+                desc: "Custom textures and finishes to match your design vision.",
+              },
+              {
+                title: "Waterproofing",
+                desc: "Coatings and systems to protect and extend the life of your finish.",
+              },
+              {
+                title: "Commercial & Residential",
+                desc: "From single-family homes to large commercial facades.",
+              },
             ].map((item) => (
               <li
                 key={item.title}
                 className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm transition hover:shadow-md"
               >
-                <h3 className="font-display text-lg font-semibold text-stone-900">{item.title}</h3>
+                <h3 className="font-display text-lg font-semibold text-stone-900">
+                  {item.title}
+                </h3>
                 <p className="mt-2 text-stone-600">{item.desc}</p>
               </li>
             ))}
@@ -102,7 +149,10 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="bg-stone-900 px-4 py-16 text-white sm:px-6 sm:py-20">
+      <section
+        id="contact"
+        className="bg-stone-900 px-4 py-16 text-white sm:px-6 sm:py-20"
+      >
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
             Get in Touch
@@ -116,8 +166,18 @@ export default function Home() {
               className="flex items-center gap-3 rounded-lg border border-stone-600 bg-stone-800/50 px-6 py-4 transition hover:border-amber-500 hover:bg-stone-800"
             >
               <span className="text-amber-400">
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
                 </svg>
               </span>
               <div>
@@ -130,8 +190,18 @@ export default function Home() {
               className="flex items-center gap-3 rounded-lg border border-stone-600 bg-stone-800/50 px-6 py-4 transition hover:border-amber-500 hover:bg-stone-800"
             >
               <span className="text-amber-400">
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
               </span>
               <div>
@@ -145,7 +215,10 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-stone-800 bg-stone-950 py-8 text-center text-sm text-stone-500">
-        <p>© {new Date().getFullYear()} Competence Plastering & Stucco, Inc. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} Competence Plastering & Stucco, Inc. All
+          rights reserved.
+        </p>
       </footer>
     </div>
   );
